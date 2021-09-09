@@ -1,17 +1,11 @@
-import React from 'react';
-import './App.css';
-
-
+import AppRouter from "./router/Router";
+import AuthContextProvider from "./context/AuthContext"
 
 const App = () => {
-
-  
-
   return (
-    <div className="App">
-      hello
-    </div>
+    <AuthContextProvider>
+      <AppRouter />
+    </AuthContextProvider>
   );
 }
-
 export default App;
