@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {createUser, signUpProvider} from '../auth/firebase';
+// import {createUser, signUpProvider} from '../auth/firebase';
 // import { useHistory } from "react-router-dom";
 
 
