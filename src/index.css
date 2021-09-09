@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #eee;
+  color: #fff;
+  font-family: "Poppins", "sans-serif";
+  margin: 0;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+}
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie {
+  background-color: #3F51B5;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 1rem;
+  width: 300px;
+  position: relative;
+}
+.movie img {
+  object-fit: cover;
+  height: 450px;
+  max-width: 100%;
+}
+.movie-info {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.movie-info h3 {
+  margin: 0;
+}
+.movie-over {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  padding: 1rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.movie:hover .movie-over {
+  transform: translateX(0%);
+}
+.tag {
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-weight: bold;
+}
+.tag.green {
+  background-color: #1B5E20;
+}
+.tag.orange {
+  background-color: #F57F17;
+}
+.tag.red {
+  background-color: #7F0000;
+}
+.search {
+  width: 100%;
+  justify-content: center;
+  background-color: #BDBDBD;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.search-input {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.form-control{
+  width: 300px;
+  margin: 20px;
+}
+.navbar {
+  padding: 1rem 3rem;
+  background-color: #0D47A1 !important;
+}
+.register {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.register-form {
+  flex: 1;
+  background-color: #EEEEEE;
+  color: #000000;
+  padding: 5rem;
+}
+.form-label {
+  padding-left: 1.5rem;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+}
+.form-control {
+  width: 90%;
+}
+.btn-primary {
+  margin-left: 1.5rem;
+}
+.form-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.form-image {
+  flex: 1;
+  min-width: 1200px;
+  min-height: 900px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+.buttons h3 {
+  margin-top: 8px;
+}
+.link {
+  color: #0B5ED7;
+  text-decoration: underline;
+  margin-left: 1.5rem;
+  cursor: pointer;
 }
