@@ -15,6 +15,7 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   
+
 export const createUser = async (email, password, displayName) => {
   try {
     await firebase
@@ -30,6 +31,7 @@ export const createUser = async (email, password, displayName) => {
         // var errorMessage = error.message;
         // ..
       });
+
     const currentUser = firebase.auth().currentUser;
     await currentUser.updateProfile({ displayName });
   } catch (error) {
@@ -38,41 +40,43 @@ export const createUser = async (email, password, displayName) => {
     );
   }
 };
-export const signIn = (email, password) => {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      // var user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      // var errorCode = error.code;
-      // var errorMessage = error.message;
-      alert("The password is invalid or the user does not have a password!");
-    });
-};
-export const signOut = () => {
-  firebase.auth().signOut();
-};
-export const userObserver = async (setCurrentUser) => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      setCurrentUser(user);
-    } else {
-      // User is signed out
-      setCurrentUser(null);
-    }
-  });
-};
-export const signUpProvider = () => {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: "select_account" });
-  firebase.auth().signInWithPopup(provider);
-};
-export const forgotPassword = (email) => {
-  firebase.auth().sendPasswordResetEmail(email);
-  alert("Please check your mail box!");
-};
+
+
+// export const signIn = (email, password) => {
+//   firebase
+//     .auth()
+//     .signInWithEmailAndPassword(email, password)
+//     .then((userCredential) => {
+//       // Signed in
+//       // var user = userCredential.user;
+//       // ...
+//     })
+//     .catch((error) => {
+//       // var errorCode = error.code;
+//       // var errorMessage = error.message;
+//       alert("The password is invalid or the user does not have a password!");
+//     });
+// };
+// export const signOut = () => {
+//   firebase.auth().signOut();
+// };
+// export const userObserver = async (setCurrentUser) => {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       setCurrentUser(user);
+//     } else {
+//       // User is signed out
+//       setCurrentUser(null);
+//     }
+//   });
+// };
+// export const signUpProvider = () => {
+//   var provider = new firebase.auth.GoogleAuthProvider();
+//   provider.setCustomParameters({ prompt: "select_account" });
+//   firebase.auth().signInWithPopup(provider);
+// };
+// export const forgotPassword = (email) => {
+//   firebase.auth().sendPasswordResetEmail(email);
+//   alert("Please check your mail box!");
+// };
 export default firebaseApp;
